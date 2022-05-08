@@ -1,0 +1,34 @@
+﻿@model IEnumerable<StudentComp.Models.Handbook>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+
+
+@foreach (var item in Model)
+{
+    <div class="swiper-slide">
+        <div class="testimonial-wrap">
+            <div class="testimonial-item">
+                <img src="~/Content/assets/img/notepad.png" class="testimonial-img" alt="Bài viết">
+                <h3>@item.Brief</h3>
+                <h3><i class="bx bxs-show"></i> @item.Hit</h3>
+                <p>
+                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    @{
+                        if (item.Content.Length > 200)
+                        {
+                            @Html.Raw(item.Content.Substring(0, 200));
+                        }
+                        else
+                        {
+                            @Html.Raw(item.Content.Substring(0, item.Content.Length));
+                        }
+                    }
+                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+            </div>
+        </div>
+    </div>
+}

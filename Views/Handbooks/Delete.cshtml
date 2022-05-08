@@ -1,0 +1,67 @@
+﻿@model StudentComp.Models.Handbook
+
+@{
+    ViewBag.Title = "Delete";
+}
+@section sectionTitle{
+    <span>BÀI VIẾT</span>
+}
+@section contentPage{
+    <span>Xóa bài viết</span>
+}
+<h3>Bạn chắc chắn muốn xóa bài viết này?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Brief)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Brief)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Content)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hit)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>HSSC - High school student companion</title>
+
+    <!-- Favicons -->
+    <link href="~/favicon.png" rel="icon">
+    <link href="~/favicon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="~/Content/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="~/Content/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="~/Content/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/Content/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/Content/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/Content/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="~/Content/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="~/Content/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="~/Content/datatables.min.css" rel="stylesheet" />
+    <!-- Template Main CSS File -->
+    <link href="~/Content/assets/css/style.css" rel="stylesheet">
+    @RenderSection("css", required: false)
+</head>
+<body>
+
+    <!-- ======= Top Bar ======= -->
+    <div id="topbar" class="d-flex align-items-center fixed-top">
+        <div class="container d-flex justify-content-between">
+            <div class="contact-info d-flex align-items-center">
+                <i class="bi bi-envelope"></i> <a href="mailto:lalaylee@gmail.com">lalaylee@gmail.com</a>
+                <i class="bi bi-phone"></i> +84 0969 555 489
+            </div>
+            <div class="d-none d-lg-flex social-links align-items-center">
+                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+                <div>@Html.Partial("_LoginPartial")</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center">
+
+            <h1 class="logo me-auto"><a href="~/Home">Student Companion</a></h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            @*<a href="index.html" class="logo me-auto"><img src="/Content/assets/img/logo.png" alt="" class="img-fluid"></a>*@
+
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                    <li><a class="nav-link scrollto " href="~/Home">Trang chủ</a></li>
+                    <li><a class="nav-link scrollto" href="~/Handbooks">Bài viết</a></li>
+                    <li><a class="nav-link scrollto" href="~/Home/PomoTimer">Pomodoro</a></li>
+                    <li><a class="nav-link scrollto" href="~/Home/Calendar">Lịch học</a></li>
+                    <li><a class="nav-link scrollto" href="~/Home/recommend">Chủ đề quan tâm</a></li>
+                    <li><a class="nav-link scrollto" href="~/Home/About">Giới thiệu</a></li>
+                    <li><a class="nav-link scrollto" href="~/Home/Contact">Liên hệ</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+            <div class="search-box">
+                <form action="" method="post">
+                    <input type="text" name="searchKey"><input type="submit" value="Search">
+                </form>
+            </div>
+            @*<a href="#appointment" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>*@
+
+        </div>
+    </header><!-- End Header -->
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex align-items-center">
+        <div class="container">
+            <h1>NGÀY NAY HỌC TẬP, NGÀY MAI GIÚP ĐỜI</h1>
+            <h2 style="background: #f1f7fd; color: #1977cc; border-radius: 50px; padding: 12px 35px;">Bây giờ còn nhỏ, chúng ta phải chăm lo học tập, trau dồi tài đức, để mai sau lớn lên sẽ có đủ tài năng, đức độ. 
+            Chúng ta mới có thể giúp ích cho bản thân, gia đình và xã hội.</h2>
+            <a href="~/Handbooks" class="btn-get-started scrollto">Bắt đầu</a>
+        </div>
+    </section><!-- End Hero -->
+    <main id="main">
+
+        <!-- ======= Why Us Section ======= -->
+        <section id="why-us" class="why-us">
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-lg-4 d-flex align-items-stretch">
+                        <div class="content">
+                            <h3>Về HS Student's Companinon </h3>
+                            <p>
+                                Thấu hiểu những mong muốn của bản thân là một học sinh trung học cơ sở, 
+                                với bài vỡ và lịch học dày đặc, để giúp các em có một công cụ ghi nhớ, nhắc lịch, 
+                                giúp các em học sinh không bỏ lỡ những bài học hay, mẹo hay trong học tập đó chính là 
+                                mục đích của phần mềm này.
+                            </p>
+                            <div class="text-center">
+                                <a href="#" class="more-btn">Chi tiết <i class="bx bx-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 d-flex align-items-stretch">
+                        <div class="icon-boxes d-flex flex-column justify-content-center">
+                            <div class="row">
+                                <div class="col-xl-4 d-flex align-items-stretch">
+                                    <div class="icon-box mt-4 mt-xl-0">
+                                        <i class="bx bx-calendar"></i>
+                                        <h4>Smart Calendar</h4>
+                                        <p> Công cụ lập lịch và nhắc nhỡ để tránh bị quên những lịch học quan trọng, có thể sử dụng được trên chiếc điện thoại nhỏ gọn luôn bên mình.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 d-flex align-items-stretch">
+                                    <div class="icon-box mt-4 mt-xl-0">
+                                        <i class="bx bx-timer"></i>
+                                        <h4>Pomodoro Timer</h4>
+                                        <p>Công cụ quản lý thời gian giúp các bạn học sinh sử dụng hiệu quả thời gian trong học tập và thư giãn</p>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 d-flex align-items-stretch">
+                                    <div class="icon-box mt-4 mt-xl-0">
+                                        <i class="bx bx-book"></i>
+                                        <h4>Smart Notebook</h4>
+                                        <p>Sổ tay ghi chép các bài học hay phân loại theo chủ đề, cho phép chia sẻ cộng đồng để các bạn học sinh tham khảo và đóng góp nội dung.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- End .content-->
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End Why Us Section -->
+        
+        <!-- ======= Testimonials Section ======= -->
+        <section id="testimonials" class="testimonials">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Bài viết hay</h2>
+                </div>
+                <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+                    <div class="swiper-wrapper">
+
+                        @RenderBody()
+
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+
+            </div>
+        </section><!-- End Testimonials Section -->
+    </main><!-- End #main -->
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container d-md-flex py-4">
+
+            <div class="me-md-auto text-center text-md-start">
+                <div class="copyright">
+                    &copy; Copyright <strong><span>HSSC</span></strong>. All Rights Reserved
+                </div>
+                <div class="credits">
+                    Designed by <a href="#">HSSC group</a>
+                </div>
+            </div>
+            <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="~/Content/assets/vendor/purecounter/purecounter.js"></script>
+    <script src="~/Content/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="~/Content/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="~/Content/assets/vendor/php-email-form/validate.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+
+    <script src="~/Scripts/datatables.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="~/Content/assets/js/main.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
