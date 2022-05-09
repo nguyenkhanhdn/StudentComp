@@ -52,28 +52,51 @@ namespace StudentComp.Controllers
         // GET: Handbooks/Details/5
         public ActionResult Details(int? id)
         {
-            if (id == null)
+            Handbook handbook = null;
+            try
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Handbook handbook = db.Handbooks.Find(id);
+                if (id == null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+                handbook = db.Handbooks.Find(id);
 
-            Recommend recommend = db.Recommends.Where(r => r.HandbookId == id).FirstOrDefault();
-            string recomm = recommend.RecommendArticle;
-            ViewBag.RecommendArticle = recomm;
+                Recommend recommend = db.Recommends.Where(r => r.HandbookId == id).FirstOrDefault();
+                string recomm = recommend.RecommendArticle;
+
+                string[] recommends = recomm.Split(';');
+
+                List<string> articles = new List<string>();
+                foreach (var s in recommends)
+                {
+                    var hb = db.Handbooks.Where(h => h.Brief.Contains(s.Trim())).FirstOrDefault();
+                    if (hb != null)
+                    {
+                        string item = hb.Id.ToString() + ";" + hb.Brief;
+                        articles.Add(item);
+                    }
+                }
+
+                ViewBag.Articles = articles;
+
+                if (handbook == null)
+                {
+
+                    return HttpNotFound();
+                }
+                handbook.Hit += 1;
+
+                Read read = new Read();
+                read.HbId = id;
+                read.UserName = User.Identity.Name;
+                db.Reads.Add(read);
+                db.SaveChanges();
+            }
+            catch(Exception ex)
+            {
+
+            }
             
-            if (handbook == null)
-            {
-
-                return HttpNotFound();
-            }
-            handbook.Hit += 1;
-
-            Read read = new Read();
-            read.HbId = id;
-            read.UserName = User.Identity.Name;
-            db.Reads.Add(read);
-            db.SaveChanges();
             return View(handbook);
         }
 

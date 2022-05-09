@@ -110,12 +110,52 @@
                 </div>
             }
         </dd>
-
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+
+<div>
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Bài viết tương tự</h2>
+            </div>
+            <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+                <div class="swiper-wrapper">
+
+                    @{
+                        List<string> articles = ViewBag.Articles as List<string>;
+                        foreach (var x in articles)
+                        {
+                            string[] itm = x.Split(';');
+
+                            <div class="swiper-slide">
+                                <div class="testimonial-wrap">
+                                    <div class="testimonial-item">
+                                        <img src="~/Content/assets/img/notepad.png" class="testimonial-img" alt="Bài viết">
+                                        <h3><a href="~/handbooks/details/@itm[0]">@itm[1]</a></h3>
+                                        <h3><i class="bx bxs-show"></i></h3>
+                                        <p>
+                                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                            @itm[1]
+                                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+        </div>
+    </section><!-- End Testimonials Section -->
+    
+</div>
+<hr />
+<p>    
+    @Html.ActionLink("Về trước", "Index")
 </p>
 @section Scripts
 {

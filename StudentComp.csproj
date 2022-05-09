@@ -1357,6 +1357,7 @@
     <Content Include="pomodoro\index.html" />
     <Content Include="pomodoro\main.js" />
     <Content Include="pomodoro\styles.css" />
+    <Content Include="Recommend\recommend.py" />
     <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
